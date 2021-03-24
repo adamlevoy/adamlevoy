@@ -2,7 +2,7 @@
 - 🕸️ I’m interested in web design & development.
 - 📚 I’m currently learning html, css, and js.
 - 🚀 I’m looking to collaborate on neat web projects.
-- 📫 Reach me on Twitter @adamlevoy.
+- 📫 Reach me on twitter @adamlevoy.
 
 <!---
 adamlevoy/adamlevoy is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
