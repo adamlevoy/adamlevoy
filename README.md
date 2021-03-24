@@ -1,7 +1,6 @@
 - 👋🏼 Hi, I’m Adam
-- 🕸️ I’m interested in web design & development
-- 📚 I’m currently learning html, css, and js
-- 🚀 I’m looking to collaborate on neat web projects
+- 🕸️ Interested in web design & development
+- 📚 Learning html, css, and js
 - 📫 Reach me on twitter @adamlevoy
 
 <!---
