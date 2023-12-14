@@ -1,0 +1,21 @@
+---
+const { heading, subheading } = Astro.props;
+---
+
+<div class="mb-20">
+  <h2 class="text-5xl">{heading}</h2>
+  <p class="text-3xl pt-4">
+    {subheading}
+  </p>
+</div>
+
+<style>
+  h2 {
+    font-family: var(--ff-heading);
+  }
+  p {
+    font-family: var(--ff-subheading);
+    color: var(--primary-200);
+    line-height: 1.5;
+  }
+</style>

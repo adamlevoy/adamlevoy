@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import Adam from "../assets/images/adam-levoy.png";
+import ScrollBar from "./ScrollBar.astro";
+import NavBar from "./navigation/NavBar.astro";
+---
+
+<section>
+  <NavBar />
+  <div
+    class="grid md:grid-cols-2 gap-8 items-center mx-auto px-4 w-full max-w-[1200px]"
+  >
+    <div class="flex flex-col justify-center w-full">
+      <div class="ff-heading text-6xl text-center md:text-left">
+        <span>Ahoy, I'm</span>
+        <span class="text-gradient">Adam</span>
+        <br />
+      </div>
+      <h2
+        class="subhead | flex flex-col gap-y-2 ff-subheading text-3xl sm:text-4xl lg:text-5xl text-center md:text-left mt-2"
+      >
+        <span>Shopify Expert</span>
+        <span>Brand Founder</span>
+        <span>Growth Marketer</span>
+      </h2>
+    </div>
+    <div class="relative flex justify-center md:justify-end">
+      <div class="img-bg | rounded-full overflow-hidden">
+        <Image src={Adam} alt="adam levoy" />
+      </div>
+    </div>
+  </div>
+  <ScrollBar />
+</section>
+
+<style>
+  section {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .img-bg {
+    background-color: var(--bg-300);
+  }
+
+  .subhead {
+    color: var(--text-200);
+  }
+</style>

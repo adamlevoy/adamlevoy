@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+const { src, alt, title, body, url } =   Astro.props;
+---
+
+<article class="flex flex-col basis-80 shadow-2xl flex-grow bg-slate-800 rounded-xl overflow-hidden">
+  <Image class="aspect-[16/9]" src={src} alt={alt} />
+  <div class="flex flex-col justify-between p-4">
+    <h3 class="font-bold">{title}</h3>
+    <p>{body}</p>
+    <div class="flex">
+      <a href={url} class="shadow-xl">Visit Site</a>
+    </div>
+  </div>
+</article>

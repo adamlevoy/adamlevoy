@@ -1,0 +1,18 @@
+---
+const { col1, col2, col3, col4 } = Astro.props;
+---
+
+<button class="theme-swatch | flex">
+  <span
+    class="rounded-full w-5 aspect-square z-50 shadow-xl"
+    style=`background-color: #${col1}`></span>
+  <span
+    class="rounded-full w-5 aspect-square -ml-1 z-40 shadow-xl"
+    style=`background-color: #${col2}`></span>
+  <span
+    class="rounded-full w-5 aspect-square -ml-1 z-30 shadow-xl"
+    style=`background-color: #${col3}`></span>
+  <span
+    class="rounded-full w-5 aspect-square -ml-1 z-20 shadow-xl"
+    style=`background-color: #${col4}`></span>
+</button>

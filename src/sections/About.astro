@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import SectionContainer from "../components/SectionContainer.astro";
+import SectionTitle from "../components/SectionHeading.astro";
+import Wedding from "../assets/images/wedding.jpg";
+import SectionHeading from "../components/SectionHeading.astro";
+---
+
+<SectionContainer id="about">
+  <SectionHeading
+    heading="about"
+    subheading="Entrepreneur and builder of things with a background in finance, marketing and e-commerce."
+  />
+  <div class="grid md:grid-cols-2 gap-16 text-2xl">
+    <div class="flex flex-col justify-center gap-8 order-2 md:order-1">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est cumque
+        eius iure, sunt assumenda quaerat corporis, laborum ut aperiam enim
+        dicta porro illo perferendis. Repellendus fugiat distinctio vero modi
+        dolorum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore unde
+        repudiandae veniam enim incidunt vero amet in rem, est quaerat
+        voluptates tempora sed non nisi debitis, laudantium possimus ipsam
+        distinctio.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore unde
+        repudiandae veniam enim incidunt vero amet in rem, est quaerat
+        voluptates tempora sed non nisi debitis, laudantium possimus ipsam
+        distinctio.
+      </p>
+    </div>
+    <div class="order-1 md:order-2">
+      <Image
+        src={Wedding}
+        alt="adam & elizabeth wedding"
+        class="rounded-3xl shadow-2xl"
+      />
+    </div>
+  </div>
+</SectionContainer>

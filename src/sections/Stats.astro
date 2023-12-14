@@ -1,0 +1,36 @@
+---
+import SectionContainer from "../components/SectionContainer.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+---
+
+<SectionContainer id="stats">
+  <SectionHeading
+    heading="stats"
+    subheading="Some high-level highlights from across my brands."
+  />
+  <div class="w-full flex flex-wrap justify-between mt-16">
+    <div class="flex flex-col items-center">
+      <p class="stat | text-6xl font-bold">$3M</p>
+      <p class="text-xl">in Shopify Sales</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <p class="stat | text-6xl font-bold">36%</p>
+      <p class="text-xl">Email Open Rate</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <p class="stat | text-6xl font-bold">60k</p>
+      <p class="text-xl">Monthly Visitors</p>
+    </div>
+    <div class="flex flex-col items-center">
+      <p class="stat | text-6xl font-bold">$140</p>
+      <p class="text-xl">Avg. Order Value</p>
+    </div>
+  </div>
+</SectionContainer>
+
+<style>
+  .stat {
+    font-family: var(--ff-heading);
+    color: var(--accent-100);
+  }
+</style>

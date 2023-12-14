@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon";
+import ThemePicker from "./ThemePicker.astro";
+---
+
+<nav class="relative flex flex-row-reverse gap-x-4">
+  <div class="toggle-container flex items-baseline gap-x-2">
+    <ThemePicker />
+    <button
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+      class="mobile-nav-toggle | w-10 aspect-square"
+    >
+      <Icon name="ion:menu" class="toggle-open" />
+      <Icon name="foundation:skull" class="toggle-close hidden" />
+    </button>
+  </div>
+
+  <ul
+    id="primary-navigation"
+    data-visible="false"
+    class="primary-navigation | flex list-none gap-8"
+  >
+    <a
+      href="#about"
+      class="underline decoration-wavy underline-offset-4 hover:underline-offset-8"
+      ><li>about</li></a
+    >
+    <a
+      href="#brands"
+      class="underline decoration-wavy underline-offset-4 hover:underline-offset-8"
+      ><li>brands</li></a
+    >
+    <a
+      href="#skills"
+      class="underline decoration-wavy underline-offset-4 hover:underline-offset-8"
+      ><li>skills</li></a
+    >
+    <a
+      href="#"
+      class="underline decoration-wavy underline-offset-4 hover:underline-offset-8"
+      ><li>contact</li></a
+    >
+  </ul>
+</nav>
+
+<script>
+  const primaryNav = document.querySelector(".primary-navigation");
+  const navToggle = document.querySelector(".mobile-nav-toggle");
+  const toggleOpen = document.querySelector(".toggle-open");
+  const toggleClose = document.querySelector(".toggle-close");
+
+  navToggle.addEventListener("click", () => {
+    const visibility = primaryNav.getAttribute("data-visible");
+    if (visibility === "false") {
+      primaryNav.setAttribute("data-visible", "true");
+      navToggle.setAttribute("aria-expanded", "true");
+      toggleOpen.classList.add("hidden");
+      toggleClose.classList.remove("hidden");
+    } else {
+      primaryNav.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-expanded", "false");
+      toggleOpen.classList.remove("hidden");
+      toggleClose.classList.add("hidden");
+    }
+  });
+</script>
+
+<style lang="css">
+  .primary-navigation {
+  }
+
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  @media (max-width: 40em) {
+    .primary-navigation {
+      position: fixed;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      place-items: center;
+      justify-content: center;
+      z-index: 1000;
+      background-color: var(--bg-200);
+      font-size: x-large;
+      width: 100%;
+      height: 100%;
+      transform: translateX(100%);
+      transition: transform ease-in-out 350ms;
+    }
+
+    .primary-navigation[data-visible="true"] {
+      transform: translateX(0);
+    }
+
+    .toggle-container {
+      position: fixed;
+      right: 2rem;
+      z-index: 9999;
+    }
+
+    .mobile-nav-toggle {
+      display: block;
+    }
+  }
+
+  [astro-icon] {
+    color: var(--accent-100);
+
+    :hover {
+      color: var(--accent-200);
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>

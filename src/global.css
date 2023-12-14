@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* colors */
+    --primary-100: #2e8b57;
+    --primary-200: #61bc84;
+    --primary-300: #c6ffe6;
+    --accent-100: #8fbc8f;
+    --accent-200: #345e37;
+    --text-100: #ffffff;
+    --text-200: #e0e0e0;
+    --bg-100: #1e1e1e;
+    --bg-200: #2d2d2d;
+    --bg-300: #454545;
+
+    /* gradients */
+    --accent-gradient: linear-gradient(
+      45deg,
+      var(--primary-100),
+      var(--accent-200) 30%,
+      var(--primary-100) 60%
+    );
+    /* fonts */
+    --ff-heading: "Poppins", sans-serif;
+    --ff-subheading: "Rock Salt", serif;
+    --ff-body: system-ui, sans-serif;
+  }
+
+  .default-theme {
+    /* colors */
+    --primary-100: #2e8b57;
+    --primary-200: #61bc84;
+    --primary-300: #c6ffe6;
+    --accent-100: #8fbc8f;
+    --accent-200: #345e37;
+    --text-100: #ffffff;
+    --text-200: #e0e0e0;
+    --bg-100: #1e1e1e;
+    --bg-200: #2d2d2d;
+    --bg-300: #454545;
+
+    /* gradients */
+    --accent-gradient: linear-gradient(
+      45deg,
+      var(--primary-100),
+      var(--accent-100) 30%,
+      var(--primary-100) 60%
+    );
+  }
+
+  .alternate-theme {
+    --primary-100: #1e295a;
+    --primary-200: #4c5187;
+    --primary-300: #abacea;
+    --accent-100: #f18f01;
+    --accent-200: #833500;
+    --text-100: #353535;
+    --text-200: #5f5f5f;
+    --bg-100: #f5ecd7;
+    --bg-200: #ebe2cd;
+    --bg-300: #c2baa6;
+
+    /* gradients */
+    --accent-gradient: linear-gradient(
+      45deg,
+      var(--primary-100),
+      var(--accent-100) 30%,
+      var(--primary-100) 60%
+    );
+  }
+
+  html {
+    font-family: var(--ff-body);
+    background: var(--bg-100);
+    color: var(--text-100);
+    transition: all ease 500ms;
+  }
+
+  a {
+    color: var(--accent-100);
+  }
+
+  a:hover {
+    color: var(--accent-200);
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  .ff-heading {
+    font-family: var(--ff-heading);
+  }
+
+  .ff-subheading {
+    font-family: var(--ff-subheading);
+  }
+
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      background-position-y: 0%;
+    }
+    50% {
+      background-position-y: 80%;
+    }
+  }
+}

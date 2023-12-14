@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+const { title, body, href, linkText, logoSrc, imgSrc } = Astro.props;
+---
+
+<div class="grid md:grid-cols-2 gap-y-12 mt-20">
+  <div class="flex flex-col justify-center">
+    <!-- <Image src={logoSrc} alt="pika vibe logo white" class="max-w-[100px]" /> -->
+    <div>
+      <slot />
+    </div>
+    <div class="md:pr-8 mt-8">
+      <h3 class="ff-heading tracking-wider font-bold text-xl">{title}</h3>
+      <p class="max-w-prose">
+        {body}
+      </p>
+      <a
+        class="underline underline-offset-4 decoration-wavy hover:underline-offset-8 inline-block mt-4"
+        href={href}>{linkText}</a
+      >
+    </div>
+  </div>
+  <div>
+    <Image
+      src={imgSrc}
+      alt="pika vibe shope collection"
+      class="rounded-3xl shadow-2xl"
+    />
+  </div>
+</div>
+
+<style>
+  h3 {
+    color: var(--primary-100);
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import SectionContainer from "../components/SectionContainer.astro";
+import SkillsCard from "../components/SkillsCard.astro";
+import Shopify from "../assets/logos/shopify.png";
+import Klaviyo from "../assets/logos/klaviyo.png";
+import Gorgias from "../assets/logos/gorgias.png";
+import AdWords from "../assets/logos/google-ads.png";
+import SectionHeading from "../components/SectionHeading.astro";
+---
+
+<SectionContainer id="skills">
+  <SectionHeading
+    heading="skills"
+    subheading="An eclectic mix of talents built over years of tinkering, building, and DIY entrepreneurship."
+  />
+  <div class="flex flex-wrap gap-8 justify-around md:justify-between">
+    <SkillsCard
+      src={Shopify}
+      alt="shopify logo"
+      title="Shopify"
+      points={["Setup & Management", "Theme Setup", "App Integration"]}
+    />
+    <SkillsCard
+      src={Klaviyo}
+      alt="klaviyo logo"
+      title="Klaviyo"
+      points={["SMS & Email Marketing", "Campaign Strategy", "Email Design"]}
+    />
+    <SkillsCard
+      src={Gorgias}
+      alt="gorgias logo"
+      title="Gorgias"
+      points={["SMS & Email Marketing", "Campaign Strategy", "Email Design"]}
+    />
+    <SkillsCard
+      src={AdWords}
+      alt="google ads logo"
+      title="Adwords"
+      points={["Keyword Research", "Campaign Strategy", "Email Optimiation"]}
+    />
+  </div>
+</SectionContainer>

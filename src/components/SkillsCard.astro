@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+const { src, alt, title, points } = Astro.props;
+---
+
+<div class="card rounded-3xl p-10 flex flex-col items-center grow shadow-2xl">
+  <Image src={src} alt={alt} class="max-w-[80px]" />
+  <h2 class="ff-heading text-2xl font-bold mt-4">{title}</h2>
+  <ul class="mt-4 text-center">
+    {
+      points.map((point: []) => {
+        return <li class="mt-2">{point}</li>;
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .card {
+    background-color: var(--bg-200);
+    border: 3px solid var(--accent-100);
+    transition: all ease 0.3s;
+    color: var(--text-100);
+  }
+  .card:hover {
+    box-shadow: 0px 0px 20px var(--accent-200);
+  }
+</style>

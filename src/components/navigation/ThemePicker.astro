@@ -1,0 +1,83 @@
+---
+import { Icon } from "astro-icon";
+import ThemeSwatch from "./ThemeSwatch.astro";
+---
+
+<div class="relative">
+  <button
+    aria-controls="theme-picker"
+    aria-expanded="false"
+    class="theme-toggle | w-9 aspect-square"
+  >
+    <Icon name="line-md:paint-drop-half-filled" />
+  </button>
+  <div
+    id="theme-picker"
+    data-visible="false"
+    class="theme-picker | absolute flex flex-col gap-y-2 mt-2"
+  >
+    <ThemeSwatch col1="1e295a" col2="abacea" col3="f18f01" col4="833500" />
+    <ThemeSwatch col1="1e295a" col2="abacea" col3="f18f01" col4="833500" />
+    <ThemeSwatch col1="1e295a" col2="abacea" col3="f18f01" col4="833500" />
+    <ThemeSwatch col1="1e295a" col2="abacea" col3="f18f01" col4="833500" />
+  </div>
+</div>
+
+<script>
+  const themeBody = document.querySelector("html");
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themePicker = document.querySelector(".theme-picker");
+  const themeSwatches = document.querySelectorAll(".theme-swatch");
+  console.log(themeSwatches);
+
+  function toggleThemePicker() {
+    const visibility = themePicker.getAttribute("data-visible");
+    if (visibility === "false") {
+      themePicker.setAttribute("data-visible", "true");
+    } else {
+      themePicker.setAttribute("data-visible", "false");
+    }
+  }
+
+  function toggleTheme() {
+    const currentTheme = themeBody.classList[0];
+    if (currentTheme === "default-theme") {
+      themeBody.classList.remove("default-theme");
+      themeBody.classList.add("alternate-theme");
+      console.log(currentTheme);
+    } else if (currentTheme === "alternate-theme") {
+      themeBody.classList.remove("alternate-theme");
+      themeBody.classList.add("default-theme");
+      console.log(currentTheme);
+    }
+    toggleThemePicker();
+  }
+
+  themeToggle.addEventListener("click", () => {
+    toggleThemePicker();
+  });
+
+  themeSwatches.forEach((swatch) => {
+    swatch.addEventListener("click", () => {
+      toggleTheme();
+    });
+  });
+</script>
+
+<style lang="css">
+  .theme-picker {
+    transform: translateY(-250%);
+    transition: all ease-in-out 350ms;
+  }
+  .theme-picker[data-visible="true"] {
+    transform: translateY(0);
+  }
+
+  [astro-icon] {
+    color: var(--accent-100);
+
+    :hover {
+      color: var(--accent-200);
+    }
+  }
+</style>
