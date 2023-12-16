@@ -11,25 +11,42 @@ import SectionHeading from "../components/SectionHeading.astro";
     heading="about"
     subheading="Entrepreneur and builder of things with a background in finance, marketing, & e-commerce"
   />
-  <div class="grid md:grid-cols-2 gap-16 text-2xl">
-    <div class="flex flex-col justify-center gap-8 order-2 md:order-1">
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est cumque
-        eius iure, sunt assumenda quaerat corporis, laborum ut aperiam enim
-        dicta porro illo perferendis. Repellendus fugiat distinctio vero modi
-        dolorum.
+  <div class="grid md:grid-cols-2 gap-16">
+    <div class="flex flex-col justify-start gap-3 order-2 md:order-1">
+      <p class="intro">
+        Ahoy, I'm Adam, a dynamic entrepreneur with a passion for creating,
+        building and experimenting on the web. Driven by a desire to create, I
+        founded and operate three thriving direct-to-consumer brands, all
+        powered by the Shopify platform.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore unde
-        repudiandae veniam enim incidunt vero amet in rem, est quaerat
-        voluptates tempora sed non nisi debitis, laudantium possimus ipsam
-        distinctio.
+        My commitment to hands-on involvement ensures a deep understanding of
+        the technical aspects of my businesses. My leadership style is marked by
+        a willingness to roll up my sleeves and dive into the complexities of
+        operations.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore unde
-        repudiandae veniam enim incidunt vero amet in rem, est quaerat
-        voluptates tempora sed non nisi debitis, laudantium possimus ipsam
-        distinctio.
+        Before becoming a full-time entrepreneur, I honed my skills in finance,
+        working as an investment professional in late-stage venture, private
+        equity, and leveraged finance. My financial expertise provided a solid
+        foundation for the strategic decision-making required in the business
+        world.
+      </p>
+      <p>
+        The pandemic served as a catalyst for personal growth. Seizing the
+        opportunity to learn, I taught myself web design and development. This
+        newfound skill set has become vital as an entrepreneur in the digital
+        space.
+      </p>
+      <p>
+        Beyond business, I find balance through my passion for surfing,
+        snowboarding, and skateboarding. I have an adventurous spirit that
+        translates into my approach to entrepreneurship, where I continuously
+        seek new challenges and opportunities to learn and grow.
+      </p>
+      <p>
+        I'm a dedicated family man based in Los Angeles, CA, with my super-human
+        wife and two brilliant daughters.
       </p>
     </div>
     <div class="order-1 md:order-2">
@@ -41,3 +58,11 @@ import SectionHeading from "../components/SectionHeading.astro";
     </div>
   </div>
 </SectionContainer>
+
+<style>
+  p.intro::first-letter {
+    font-size: 3rem;
+    color: var(--primary-100);
+    font-weight: bold;
+  }
+</style>

@@ -100,22 +100,6 @@
       monospace;
   }
 
-  ::-webkit-scrollbar {
-    width: 0.5rem;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--bg-300);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent-100);
-  }
-
-  scrollbar-color {
-    background: var(--primary-300);
-  }
-
   .ff-heading {
     font-family: var(--ff-heading);
   }
