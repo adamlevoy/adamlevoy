@@ -4,8 +4,7 @@ const { title, body, href, linkText, logoSrc, imgSrc } = Astro.props;
 ---
 
 <div class="grid md:grid-cols-2 gap-y-12 mt-20">
-  <div class="flex flex-col justify-center">
-    <!-- <Image src={logoSrc} alt="pika vibe logo white" class="max-w-[100px]" /> -->
+  <div class="flex flex-col justify-center order-2 md:order-1">
     <div>
       <slot />
     </div>
@@ -20,7 +19,7 @@ const { title, body, href, linkText, logoSrc, imgSrc } = Astro.props;
       >
     </div>
   </div>
-  <div>
+  <div class="order-1 md:order-2">
     <Image
       src={imgSrc}
       alt="pika vibe shope collection"

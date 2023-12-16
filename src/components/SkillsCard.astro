@@ -1,15 +1,39 @@
 ---
 import { Image } from "astro:assets";
-const { src, alt, title, points } = Astro.props;
+const { src, title, description, points } = Astro.props;
 ---
 
 <div class="card rounded-3xl p-10 flex flex-col items-center grow shadow-2xl">
-  <Image src={src} alt={alt} class="max-w-[80px]" />
+  <Image src={src} alt={`${title} logo`} class="max-w-[80px]" />
   <h2 class="ff-heading text-2xl font-bold mt-4">{title}</h2>
+  <h3>{description}</h3>
   <ul class="mt-4 text-center">
     {
       points.map((point: []) => {
-        return <li class="mt-2">{point}</li>;
+        return (
+          <li class="mt-2 flex gap-x-2 items-center">
+            <div class="max-w-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <>
+                  <path
+                    fill="currentColor"
+                    d="M9.71 11.29a1 1 0 0 0-1.42 1.42l3 3A1 1 0 0 0 12 16a1 1 0 0 0 .72-.34l7-8a1 1 0 0 0-1.5-1.32L12 13.54Z"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M21 11a1 1 0 0 0-1 1a8 8 0 0 1-8 8A8 8 0 0 1 6.33 6.36A7.93 7.93 0 0 1 12 4a8.79 8.79 0 0 1 1.9.22a1 1 0 1 0 .47-1.94A10.54 10.54 0 0 0 12 2a10 10 0 0 0-7 17.09A9.93 9.93 0 0 0 12 22a10 10 0 0 0 10-10a1 1 0 0 0-1-1"
+                  />
+                </>
+              </svg>
+            </div>
+            <p>{point}</p>
+          </li>
+        );
       })
     }
   </ul>
@@ -24,5 +48,9 @@ const { src, alt, title, points } = Astro.props;
   }
   .card:hover {
     box-shadow: 0px 0px 20px var(--accent-200);
+  }
+
+  h3 {
+    color: var(--primary-200);
   }
 </style>

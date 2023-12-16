@@ -49,8 +49,11 @@ import ThemePicker from "./ThemePicker.astro";
   const navToggle = document.querySelector(".mobile-nav-toggle");
   const toggleOpen = document.querySelector(".toggle-open");
   const toggleClose = document.querySelector(".toggle-close");
+  const links = document.querySelectorAll("a");
 
-  navToggle.addEventListener("click", () => {
+  console.log(links);
+
+  function toggleNav() {
     const visibility = primaryNav.getAttribute("data-visible");
     if (visibility === "false") {
       primaryNav.setAttribute("data-visible", "true");
@@ -63,6 +66,11 @@ import ThemePicker from "./ThemePicker.astro";
       toggleOpen.classList.remove("hidden");
       toggleClose.classList.add("hidden");
     }
+  }
+  navToggle.addEventListener("click", toggleNav);
+
+  links.forEach((link) => {
+    link.addEventListener("click", toggleNav);
   });
 </script>
 
