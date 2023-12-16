@@ -48,13 +48,12 @@ import ThemeSwatch from "./ThemeSwatch.astro";
     } else if (currentTheme === "alternate-theme") {
       themeBody.classList.remove("alternate-theme");
       themeBody.classList.add("default-theme");
-      console.log(currentTheme);
     }
-    toggleThemePicker();
+    // toggleThemePicker();
   }
 
   themeToggle.addEventListener("click", () => {
-    toggleThemePicker();
+    toggleTheme();
   });
 
   themeSwatches.forEach((swatch) => {
