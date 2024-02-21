@@ -6,7 +6,7 @@ import SectionHeading from "../components/SectionHeading.astro";
 <SectionContainer id="contact">
   <SectionHeading heading="Get in touch" />
   <form
-    class="border-4 border-secondary p-12 max-w-fit mx-auto rounded-3xl bg-neutral flex flex-col gap-6 shadow-xl"
+    class="border-4 border-accent p-12 max-w-fit mx-auto rounded-3xl bg-neutral flex flex-col gap-6 shadow-xl"
     name="contact"
     method="POST"
     data-netlify="true"
@@ -14,7 +14,7 @@ import SectionHeading from "../components/SectionHeading.astro";
     <label class="sr-only" for="email"></label>
     <input
       id="email"
-      class="input input-lg input-secondary"
+      class="input input-lg input-accent"
       type="email"
       name="email"
       required
@@ -23,7 +23,7 @@ import SectionHeading from "../components/SectionHeading.astro";
     <label class="sr-only" for="name">Your Name:</label>
     <input
       id="name"
-      class="input input-lg input-secondary"
+      class="input input-lg input-accent"
       type="text"
       name="name"
       required
@@ -32,11 +32,11 @@ import SectionHeading from "../components/SectionHeading.astro";
     <label class="sr-only" for="message"></label>
     <textarea
       id="message"
-      class="textarea textarea-secondary textarea-lg"
+      class="textarea textarea-accent textarea-lg"
       name="message"
       required
       placeholder="your message"></textarea>
 
-    <button class="btn btn-lg btn-secondary shadow" type="submit">Send</button>
+    <button class="btn btn-lg btn-accent shadow" type="submit">Send</button>
   </form>
 </SectionContainer>

@@ -1,5 +1,6 @@
 ---
 import PrimaryNav from "./navigation/PrimaryNav.astro";
+import ThemePicker from "./navigation/ThemePicker.astro";
 const menu = [
   { name: "about", link: "#about" },
   { name: "brands", link: "#brands" },
@@ -12,116 +13,36 @@ const names = ["adam", "ely", "elizabeth"];
   class="w-full items-center px-2 sticky top-0 bg-base-100/90 z-50 py-2 h-[70px] m-auto"
 >
   <div class="flex justify-between max-w-[1200px] items-center mx-auto">
-    <h1 class="text-2xl ff-heading">
-      <a href="#top"><span class="text-primary">adam</span>levoy</a>
-    </h1>
-    {names.map((name) => {})}
-    <!-- horizontal nav -->
-    <nav class="hidden md:flex grow justify-center">
-      <ul class="flex gap-x-8 text-primary">
-        {
-          menu.map((item) => {
-            return (
-              <li>
-                <a
-                  class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
-                  href={item.link}
-                >
-                  {item.name}
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </nav>
-    <div class="flex gap-x-2 items-center justify-center cursor-pointer">
-      <div class="dropdown">
-        <div tabindex="0" role="button" class="btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="fill-secondary w-8 h-8"
-            ><path
-              d="M12 22q-2.05 0-3.875-.788t-3.187-2.15q-1.363-1.362-2.15-3.187T2 12q0-2.075.813-3.9t2.2-3.175Q6.4 3.575 8.25 2.788T12.2 2q2 0 3.775.688t3.113 1.9q1.337 1.212 2.125 2.875T22 11.05q0 2.875-1.75 4.413T16 17h-1.85q-.225 0-.312.125t-.088.275q0 .3.375.863t.375 1.287q0 1.25-.687 1.85T12 22m-5.5-9q.65 0 1.075-.425T8 11.5q0-.65-.425-1.075T6.5 10q-.65 0-1.075.425T5 11.5q0 .65.425 1.075T6.5 13m3-4q.65 0 1.075-.425T11 7.5q0-.65-.425-1.075T9.5 6q-.65 0-1.075.425T8 7.5q0 .65.425 1.075T9.5 9m5 0q.65 0 1.075-.425T16 7.5q0-.65-.425-1.075T14.5 6q-.65 0-1.075.425T13 7.5q0 .65.425 1.075T14.5 9m3 4q.65 0 1.075-.425T19 11.5q0-.65-.425-1.075T17.5 10q-.65 0-1.075.425T16 11.5q0 .65.425 1.075T17.5 13"
-            ></path></svg
-          >
-          <svg
-            width="12px"
-            height="12px"
-            class="h-2 w-2 fill-current opacity-60 inline-block"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 2048 2048"
-            ><path
-              d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
-            ></path></svg
-          >
-        </div>
-        <ul
-          tabindex="0"
-          class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box"
-        >
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Default"
-              value="default"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Retro"
-              value="retro"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Dracula"
-              value="dracula"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Valentine"
-              value="valentine"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="Aqua"
-              value="aqua"
-            />
-          </li>
+    <div class="flex items-center justify-center gap-x-8">
+      <h1 class="text-2xl ff-heading">
+        <a href="#top"><span class="text-primary">adam</span>levoy</a>
+      </h1>
+      <nav class="hidden md:flex grow justify-center">
+        <ul class="flex gap-x-8 text-primary">
+          {
+            menu.map((item) => {
+              return (
+                <li>
+                  <a
+                    class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
+                    href={item.link}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
         </ul>
-      </div>
-      <a
-        href="#contact"
-        class="hidden md:inline-flex shadow uppercase btn btn-secondary"
+      </nav>
+    </div>
+    <!-- horizontal nav -->
+    <div class="flex gap-x-2 items-center justify-center cursor-pointer">
+      <ThemePicker />
+      <a href="#contact" class="hidden md:inline-flex shadow btn btn-secondary"
         >get in touch</a
       >
       <PrimaryNav />
     </div>
   </div>
 </header>
-
-<script>
-  const themeButton = document.getElementById("theme-button");
-  themeButton.addEventListener("click", () => {
-    console.log("Clicked");
-    navigator.vibrate(200);
-  });
-</script>

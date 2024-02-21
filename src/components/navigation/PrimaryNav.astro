@@ -5,12 +5,11 @@ import { Icon } from "astro-icon";
 <nav class="relative flex gap-x-4 md:hidden">
   <div class="toggle-container flex items-baseline gap-x-2">
     <button
-      aria-controls="primary-navigation"
+      aria-controls="mobile-navigation"
       aria-expanded="false"
       class="mobile-nav-toggle | w-10 aspect-square"
     >
       <Icon name="ion:menu" class="toggle-open z-50 relative" />
-      <!-- <Icon name="foundation:skull" class="toggle-close hidden z-50 relative" /> -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -25,55 +24,48 @@ import { Icon } from "astro-icon";
   </div>
 
   <ul
-    id="primary-navigation"
-    data-visible="false"
-    class="primary-navigation fixed flex top-0 right-0 justify-center items-center flex-col w-full h-full list-none gap-8 aria-expanded:translate-x-0 translate-x-[100%] transition-all ease-in duration-150 bg-neutral text-neutral-content text-3xl"
+    id="mobile-navigation"
+    aria-expanded="false"
+    class="mobile-navigation fixed flex top-0 right-0 justify-center items-center flex-col w-full h-full list-none gap-8 aria-expanded:translate-x-0 translate-x-[100%] transition-all ease-in duration-150 bg-neutral text-neutral-content text-3xl"
   >
     <a
-      id="nav-link"
       href="#about"
-      class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
+      class="nav-link hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
       ><li>about</li></a
     >
     <a
-      id="nav-link"
       href="#brands"
-      class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
+      class="nav-link hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
       ><li>brands</li></a
     >
     <a
-      id="nav-link"
       href="#skills"
-      class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
+      class="nav-link hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
       ><li>skills</li></a
     >
-    <a
-      id="nav-link"
-      href="mailto:adam@adamlevoy.com"
-      class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
-      ><li>contact</li></a
+    <a href="#contact" class="nav-link btn btn-lg btn-secondary"
+      ><li>get in touch</li></a
     >
   </ul>
 </nav>
 
 <script>
-  const primaryNav = document.querySelector(".primary-navigation");
+  const mobileNav = document.querySelector(".mobile-navigation");
   const navToggle = document.querySelector(".mobile-nav-toggle");
   const toggleOpen = document.querySelector(".toggle-open");
   const toggleClose = document.querySelector(".toggle-close");
-  const links = document.querySelectorAll("a");
-
-  console.log(links);
+  const links = document.querySelectorAll(".nav-link");
 
   function toggleNav() {
-    const visibility = primaryNav.getAttribute("data-visible");
+    console.log("clicked");
+    const visibility = mobileNav.getAttribute("aria-expanded");
     if (visibility === "false") {
-      primaryNav.setAttribute("data-visible", "true");
+      mobileNav.setAttribute("aria-expanded", "true");
       navToggle.setAttribute("aria-expanded", "true");
       toggleOpen.classList.add("hidden");
       toggleClose.classList.remove("hidden");
     } else {
-      primaryNav.setAttribute("data-visible", "false");
+      mobileNav.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-expanded", "false");
       toggleOpen.classList.remove("hidden");
       toggleClose.classList.add("hidden");
@@ -88,7 +80,7 @@ import { Icon } from "astro-icon";
 
 <style lang="css">
   @media (max-width: 40em) {
-    /* .primary-navigation {
+    /* .mobile-navigation {
       position: fixed;
       top: 0;
       right: 0;
@@ -102,7 +94,7 @@ import { Icon } from "astro-icon";
       transition: transform ease-in-out 350ms;
     } */
 
-    .primary-navigation[data-visible="true"] {
+    .mobile-navigation[data-visible="true"] {
       transform: translateX(0);
     }
 
