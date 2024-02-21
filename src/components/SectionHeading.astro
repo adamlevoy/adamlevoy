@@ -4,7 +4,7 @@ const { heading, subheading } = Astro.props;
 
 <div class="mb-20">
   <h2 class="text-5xl">{heading}</h2>
-  <p class="text-3xl pt-4">
+  <p class="text-3xl pt-4 text-primary max-w-prose">
     {subheading}
   </p>
 </div>
@@ -15,7 +15,6 @@ const { heading, subheading } = Astro.props;
   }
   p {
     font-family: var(--ff-subheading);
-    color: var(--primary-200);
     line-height: 1.5;
   }
 </style>

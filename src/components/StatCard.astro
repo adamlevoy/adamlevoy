@@ -1,0 +1,15 @@
+---
+type Props = {
+  stat: string;
+  text: string;
+};
+
+const { stat, text } = Astro.props;
+---
+
+<div
+  class="flex flex-col items-center shadow-xl p-10 bg-neutral text-neutral-content rounded-3xl border-4 border-secondary"
+>
+  <p class="ff-heading text-secondary text-6xl font-bold">{stat}</p>
+  <p class="text-xl">{text}</p>
+</div>

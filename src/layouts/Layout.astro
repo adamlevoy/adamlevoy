@@ -7,6 +7,7 @@ interface Props {
 const { title, description } = Astro.props;
 import "../global.css";
 import NavBar from "../components/navigation/NavBar.astro";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -23,7 +24,9 @@ import NavBar from "../components/navigation/NavBar.astro";
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
           dl = l != "dataLayer" ? "&l=" + l : "";
+        // @ts-expect-error
         j.async = true;
+        // @ts-expect-error
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-552B5RNJ");
@@ -48,7 +51,8 @@ import NavBar from "../components/navigation/NavBar.astro";
     <meta name="description" content={`${description}`} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="bg-base-100">
+    <Header />
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe

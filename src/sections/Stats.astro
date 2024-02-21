@@ -1,6 +1,7 @@
 ---
 import SectionContainer from "../components/SectionContainer.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import StatCard from "../components/StatCard.astro";
 ---
 
 <SectionContainer id="stats">
@@ -11,28 +12,15 @@ import SectionHeading from "../components/SectionHeading.astro";
   <div
     class="w-full flex flex-wrap justify-around md:justify-between gap-8 mt-16"
   >
-    <div class="flex flex-col items-center">
-      <p class="stat | text-6xl font-bold">$5M+</p>
-      <p class="text-xl">in Shopify Sales</p>
-    </div>
-    <div class="flex flex-col items-center">
-      <p class="stat | text-6xl font-bold">66%</p>
-      <p class="text-xl">Email Open Rate</p>
-    </div>
-    <div class="flex flex-col items-center">
-      <p class="stat | text-6xl font-bold">60k</p>
-      <p class="text-xl">Monthly Visitors</p>
-    </div>
-    <div class="flex flex-col items-center">
-      <p class="stat | text-6xl font-bold">$140</p>
-      <p class="text-xl">Avg. Order Value</p>
-    </div>
+    <StatCard stat="$5M+" text="Shopify Sales" />
+    <StatCard stat="66%" text="Email Open Rate" />
+    <StatCard stat="60k" text="Monthly Visitors" />
+    <StatCard stat="$140" text="Avg. Order Value" />
   </div>
 </SectionContainer>
 
 <style>
   .stat {
     font-family: var(--ff-heading);
-    color: var(--accent-100);
   }
 </style>
