@@ -1,0 +1,48 @@
+---
+import PrimaryNav from "./navigation/PrimaryNav.astro";
+import ThemePicker from "./navigation/ThemePicker.astro";
+const menu = [
+  { name: "about", link: "#about" },
+  { name: "brands", link: "#brands" },
+  { name: "skills", link: "#skills" },
+];
+const names = ["adam", "ely", "elizabeth"];
+---
+
+<header
+  class="w-full items-center px-2 sticky top-0 bg-base-100/90 z-50 py-2 h-[70px] m-auto"
+>
+  <div class="flex justify-between max-w-[1200px] items-center mx-auto">
+    <div class="flex items-center justify-center gap-x-8">
+      <h1 class="text-2xl ff-heading">
+        <a href="#top"><span class="text-primary">adam</span>levoy</a>
+      </h1>
+      <nav class="hidden md:flex grow justify-center">
+        <ul class="flex gap-x-8 text-primary">
+          {
+            menu.map((item) => {
+              return (
+                <li>
+                  <a
+                    class="hover:underline hover:decoration-wavy hover:underline-offset-4 transition-all ease-in duration-75"
+                    href={item.link}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+    </div>
+    <!-- horizontal nav -->
+    <div class="flex gap-x-2 items-center justify-center cursor-pointer">
+      <ThemePicker />
+      <a href="#contact" class="hidden md:inline-flex shadow btn btn-secondary"
+        >get in touch</a
+      >
+      <PrimaryNav />
+    </div>
+  </div>
+</header>

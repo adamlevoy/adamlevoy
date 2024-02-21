@@ -3,17 +3,17 @@ import { Image } from "astro:assets";
 import Adam from "../assets/images/adam-levoy.png";
 import ScrollBar from "./ScrollBar.astro";
 import NavBar from "./navigation/NavBar.astro";
+import Header from "./Header.astro";
 ---
 
-<section>
-  <NavBar />
+<section class="flex flex-col min-h-[calc(100vh-70px)]">
   <div
-    class="grid md:grid-cols-2 items-center mx-auto px-4 w-full max-w-[1200px]"
+    class="grid md:grid-cols-2 items-center mx-auto px-4 w-full max-w-[1200px] grow"
   >
     <div class="flex flex-col justify-center w-full">
       <div class="ff-heading text-6xl text-center md:text-left">
-        <span>Ahoy, I'm</span>
-        <span class="text-gradient">Adam</span>
+        <span class="tracking-tighter">Ahoy, I'm</span>
+        <span class="text-primary tracking-tighter">Adam</span>
         <br />
       </div>
       <h2
@@ -25,7 +25,7 @@ import NavBar from "./navigation/NavBar.astro";
       </h2>
     </div>
     <div class="relative flex justify-center md:justify-end">
-      <div class="img-bg | rounded-full overflow-hidden my-8 md:my-0">
+      <div class="rounded-full overflow-hidden my-8 md:my-0 bg-base-300">
         <Image src={Adam} alt="adam levoy" />
       </div>
     </div>
@@ -34,18 +34,10 @@ import NavBar from "./navigation/NavBar.astro";
 </section>
 
 <style>
-  section {
+  /* section {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 1rem;
-  }
-
-  .img-bg {
-    background-color: var(--bg-300);
-  }
-
-  .subhead {
-    color: var(--text-200);
-  }
+  } */
 </style>

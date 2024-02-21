@@ -9,12 +9,14 @@ const { title, body, href, linkText, logoSrc, imgSrc } = Astro.props;
       <slot />
     </div>
     <div class="md:pr-8 mt-8">
-      <h3 class="ff-heading tracking-wider font-bold text-xl">{title}</h3>
+      <h3 class="ff-heading font-bold text-xl text-primary">
+        {title}
+      </h3>
       <p class="max-w-prose">
         {body}
       </p>
       <a
-        class="underline underline-offset-4 decoration-wavy hover:underline-offset-8 inline-block mt-4"
+        class="underline underline-offset-4 decoration-wavy hover:underline-offset-8 inline-block mt-4 text-accent"
         href={href}>{linkText}</a
       >
     </div>
@@ -27,9 +29,3 @@ const { title, body, href, linkText, logoSrc, imgSrc } = Astro.props;
     />
   </div>
 </div>
-
-<style>
-  h3 {
-    color: var(--primary-100);
-  }
-</style>

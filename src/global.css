@@ -74,18 +74,8 @@
 
   html {
     font-family: var(--ff-body);
-    background: var(--bg-100);
-    color: var(--text-100);
     transition: all ease 500ms;
     scroll-behavior: smooth;
-  }
-
-  a {
-    color: var(--accent-100);
-  }
-
-  a:hover {
-    color: var(--accent-200);
   }
 
   code {
