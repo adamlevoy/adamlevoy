@@ -3,15 +3,22 @@ import SectionContainer from "../components/SectionContainer.astro";
 ---
 
 <footer
-  class="w-full bg-neutral text-neutral-content flex justify-center items-center text-center text-balance"
+  class="w-full bg-neutral text-neutral-content/70 flex justify-center items-center text-center text-balance"
 >
   <SectionContainer>
-    <p>
-      Built with ♥️ by <a
-        class="font-bold underline"
-        href="https://github.com/adamlevoy">@adamlevoy</a
-      >
-       from Los Angeles, CA 🌊
-    </p>
+    <div class="text-balance space-y-4">
+      <p>
+        Built with ♥️ by <a
+          class="underline"
+          href="https://github.com/adamlevoy">@adamlevoy</a
+        >
+         from Los Angeles, CA 🌊
+      </p>
+      <p>
+        Powered by <a class="underline" href="https://astro.build"
+          >{Astro.generator}</a
+        >
+      </p>
+    </div>
   </SectionContainer>
 </footer>
